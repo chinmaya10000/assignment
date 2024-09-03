@@ -7,15 +7,15 @@ NGINX_SERVICE="nginx"
 
 
 # Clone the repository
-if [[ -d "$LOCAL_DIR" ]] 
+if [[ -d "${LOCAL_DIR}" ]] 
 then
-    cd "$LOCAL_DIR"
+    cd "${LOCAL_DIR}"
     git pull origin main
 else
-    git clone "$REPO_URL" "$LOCAL_DIR"
+    git clone "${REPO_URL}" "${LOCAL_DIR}"
 fi
 
 # Restart NGINX to apply changes
-sudo systemctl restart $NGINX_SERVICE
+sudo systemctl restart ${NGINX_SERVICE}
 
 echo "Deployment completed successfully."
