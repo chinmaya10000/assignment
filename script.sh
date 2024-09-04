@@ -12,7 +12,8 @@ error_exit() {
 }
 
 # Clone the repository or update it
-if [[ -d "${LOCAL_DIR}" ]]; then
+if [[ -d "${LOCAL_DIR}" ]] 
+then
     cd "${LOCAL_DIR}" || error_exit "Failed to change directory to ${LOCAL_DIR}."
     git pull origin main || error_exit "Failed to pull the latest code from the repository."
 else
